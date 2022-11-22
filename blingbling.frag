@@ -131,7 +131,7 @@ float NetLayer(vec2 st, float n, float t) {
 
 void main( void )
 {
-    vec2 uv = (gl_FragCoord-resolution.xy*.5)/resolution.y;
+    vec2 uv = (gl_FragCoord.xy-resolution.xy*.5)/resolution.y;
 	vec2 M = mouse.xy/resolution.xy-.5;
 
     float t = time*.1;
