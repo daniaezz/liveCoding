@@ -1,0 +1,534 @@
+i_hope_so_too
+ 
+reset_it_guys
+
+wait_wait_no
+
+yes_im
+
+oh_we_started
+
+lessgoooo
+
+yessirrrr
+
+
+
+wiggle_wiggle
+
+no_kick_it
+
+can_you_bring_blobby
+
+nope
+
+make_it_more
+
+ill_try
+
+from_the_top
+
+do
+	make_it_drOOOOP
+	like_my_gpa
+
+make_it_a_line
+
+
+bro_dat_a_square
+
+lol
+
+
+guys_be_serious
+
+
+dania_where_r_u
+
+i_cant_type
+
+
+oops_i_forgot
+
+
+its_a_feature_not_a_bug
+
+i_moss_u_too
+
+soooo
+
+see_saw
+
+u_reap_what_u_so
+
+
+
+perhaps
+
+how_did_he_get_here
+
+bruh
+
+give_us_an_A_pls
+
+which_party
+
+the_one_u_r_not_invited_to
+
+whhaAAATTTTTT
+
+
+-------- THINGS WE PASTE AND DELETE --------
+
+-- CONVENTIONS: 
+		-- everything that repeats in the names (letters, words)should be repeated 4 times. 
+
+  -- set up functions
+
+------------- RESET MIDI VALUES ------------
+i_hope_so_too = do {
+  all id;
+  hush
+}
+
+
+reset_it_guys = do {
+  once $ ccv "0*128" # ccn 0 # s "midi";
+  once $ ccv "0*128" # ccn 1 # s "midi";
+  once $ ccv "0*128" # ccn 2 # s "midi";
+  once $ ccv "0*128" # ccn 3 # s "midi";
+  once $ ccv "0*128" # ccn 4 # s "midi";
+  once $ ccv "0*128" # ccn 5 # s "midi";
+  once $ ccv "0*128" # ccn 6 # s "midi";
+  once $ ccv "0*128" # ccn 7 # s "midi";
+  once $ ccv "0*128" # ccn 8 # s "midi";
+  once $ ccv "0*128" # ccn 9 # s "midi";
+  once $ ccv "0*128" # ccn 11 # s "midi";
+  once $ ccv "0*128" # ccn 12 # s "midi";
+  once $ ccv "0*128" # ccn 13 # s "midi";
+  once $ ccv "0*128" # ccn 14 # s "midi";
+  once $ ccv "0*128" # ccn 15 # s "midi";
+  once $ ccv "0*128" # ccn 16 # s "midi";
+  once $ ccv "0*128" # ccn 17 # s "midi";
+  once $ ccv "0*128" # ccn 18 # s "midi";
+  once $ ccv "0*128" # ccn 19 # s "midi";
+  once $ ccv "0*128" # ccn 20 # s "midi";
+  once $ ccv "0*128" # ccn 21 # s "midi";
+  once $ ccv "0*128" # ccn 22 # s "midi";
+  once $ ccv "0*128" # ccn 23 # s "midi";
+  once $ ccv "0*128" # ccn 24 # s "midi";
+  once $ ccv "0*128" # ccn 25 # s "midi";
+}
+
+wait_wait_no = do {
+	hush
+}
+
+------------ FIRST BUILD UP AND DROP ----------------------
+
+yes_im = do {
+  d10 $ ccv "6" # ccn 10 # s "midi";
+  once $ s "ade" # gain 1.2 # room 0.2
+}
+
+oh_we_started = do { once $ s "hehe:2" # gain 1.5 # room 0.3 } -- hi everybody + so
+
+lessgoooo = do {
+	d1 $ stack [s "em2" # note "<c d e>" # room 0.5, slow 4 $ struct "t*4" $ ccv ((segment 128 (range 127 0 saw))) # ccn "0" # s "midi"];
+    d10 $ ccv "0" # ccn 10 # s "midi"
+}
+
+yessirrrr = do {
+	d2 $ stack [s "tink(3,8)" # room 0.2 # krush 2 # speed 0.5 # gain 1.2, struct "t(3,8)" $ ccv ((segment 128 (range 127 0 saw))) # ccn "1" # s "midi"];
+    d10 $ ccv "1" # ccn 10 # s "midi"
+}
+
+wiggle_wiggle = do {
+	d3 $ stack [s "soskick(5,8)" # note "<c e f>" # gain 1, struct "t(5,8)" $ ccv ((segment 128 (range 127 0 saw))) # ccn "2" # s "midi" ]
+}
+
+no_kick_it = do {
+  d2 $ stack [s "tink(3,8)?" # room 0.2 # krush 2 # speed 0.5 # gain 1.2, struct "t*4" $ ccv ((segment 128 (range 127 0 saw))) # ccn "1" # s "midi"];
+  d5 $ stack [s "clubkick*2" # speed 2 # gain 0.9, struct "t*2" $ ccv (segment 128(range 120 0 isaw)) #ccn "3" # s "midi"]
+}
+
+can_you_bring_blobby = do { d4 $ stack [s "supervibe" #note "<c d e>", ccv (segment 128 (range 127 0 saw)) #ccn "4" # s "midi"] }
+
+nope = do { d5 $ stack [s "clubkick [clubkick*2] clubkick clubkick" # speed 2 # gain 0.9, struct "t [t t] t*2 t" $ ccv ((segment 128 (range 127 0 saw))) # ccn "3" # s "midi"] }
+
+make_it_more = do { d1 $ stack [s "em2*4" # note "<c d e>", struct "t*4" $ ccv ((segment 128 (range 127 0 saw))) # ccn "0" # s "midi"] }
+
+ill_try = do { d3 $ someCyclesBy 0.8 (fast 2) $ stack [ s "soskick(5,8)" # note "<c e f>" # gain 1,  struct "t(5,8)" $ ccv ((segment 128 (range 127 0 isaw))) # ccn "2" # s "midi", struct "t(5,8)" $ ccv ((segment 128 (range 127 0 isaw))) # ccn "3" # s "midi" ] }
+
+from_the_top = do {d5 $ fast 2 $ stack [s "clubkick [clubkick*2] clubkick clubkick" # speed 2 # gain 0.9, struct "t [t t] t*2 t" $ ccv ((segment 128 (range 127 0 saw))) # ccn "5" # s "midi"]}
+
+
+-----------------------------------------------
+
+---who triggered this, 
+-- me 
+-- what type of sorcery is this 
+-- i thought this would be the easy part 
+-- it's not working ;-;
+-- omg i forgot i need to triggere visuals, i was just gonna transcribe our convos -- this is an actual comment not a function name lol                   hehe
+
+-- lets_make_a_line
+-- bro thats a square
+-- no bro a rectangle
+
+-- lol -- amina
+-- guys be serious -- shreya
+-- nope -- thais
+-- hehe // dania
+
+-- wheres xavier -- amina
+-- oops i forgot -- shreya
+-- its a feature not a bug //amina
+-- da bug life -- thais 
+
+
+-- your cursor is cursing me 
+-- ur cursor cursed me 
+
+-- stoooop -- shreya
+-- omg i cant type 
+
+
+-- dania where are you 
+-- im here 
+-- thais where are you
+-- idk hehe
+
+-- :(
+-- its ok 
+-- im not doing anything 
+
+-- amina i miss u 
+-- i moss u too
+-- but yall right here bro
+
+-- partyyyyyyy tonight
+-- which party
+-- the one you're not invited to 
+
+-- soooo
+-- how many Os are those 
+
+-- dat rhyme bruh
+-- not really 
+
+-- from the top 
+-- make it drop 
+-- like my gpa
+
+-- hohoho
+-- merry christmas // actual comment: this can be a once $ s "xmas"
+
+
+-- i can see so
+-- see saw
+-- u reap wut u so
+-- set up functions
+
+-- i am sleep depriving
+-- u r out
+-- bring in da battles--
+-- ok 
+-- i really like what we have so far guys 
+-- okay
+
+
+-------------------------------------------------------------
+-------------- PERFORMANCE PART ---------------
+
+i_hope_so_too -- shreya -- 3
+reset_it_guys -- amina -- 4
+
+wait_wait_noooo -- shreya -- 6
+yes_im -- amina -- 7
+oh_we_started -- shreya -- 8
+
+lessgoooo -- amina -- 9
+yessirrrr -- shreya -- 12
+
+wiggle_wiggle -- dania -- 14
+no_kick_it -- thais -- 16
+
+can_you_bring_blobby -- dania --18
+
+nope -- thais -- 21
+
+make_it_more -- amina -- 23
+ill_try -- shreya -- 24
+
+from_the_top -- dania -- 25
+
+do 
+ make_it_drOOOOP -- shreya -- 26
+ like_my_gpa -- thais -- 26
+ 
+make_it_a_line -- amina -- 27 -- trigger with dania
+
+bro_dat_a_square -- thais -- 29
+lol -- amina -- 30
+guys_be_serious -- shreya -- 31 -- trigger w dania
+dania_where_r_u -- thais -- 32
+i_cant_type -- amina -- 33
+
+-- 34, 35 deleted 
+
+oops_i_forgot -- shreya -- 36 -- trigger with thais
+
+its_a_feature_not_a_bug -- amina -- 37
+i_moss_u_too -- amina - 38 -- trigger with dania
+
+soooo -- shreya -- 39
+
+see_saw -- amina -- 41 -- trigger w dania
+
+u_reap_what_u_so -- shreya -- 42
+
+perhaps -- thais -- 43 -- trigger w amina
+
+how_did_he_get_here -- amina -- 44 -- triggers the drop
+
+bruh -- shreya -- 45 -- trigger w thais
+
+give_us_an_A_pls -- amina -- 47 -- trigger with dania / trigger when the drop comes
+
+which_party -- shreya -- 48 -- degrades stuff
+
+the_one_u_r_not_invited_to -- thais -- 49 -- trigger with amina
+
+-- WHAAATTTT -- shreya -- 49
+
+
+
+
+
+
+
+
+
+like_my_gpa = do {
+  d6 $ qtrigger 6 $ seqP [
+    (0, 1, s "hehe:1" # gain 1.5 # room 0.3),
+    (0, 1, ccv "1" # ccn 6 # s "midi"),
+    --(1, 2, ccv (segment 127 (range 1 127 saw)) # ccn 6 # s "midi"),
+    (1, 2, ccv "0" # ccn 6 # s "midi"),
+    (0, 1, s "soskick(5,8)" # note "<c e f>" # gain 1.5),
+    --(0, 1, struct "t(5,8)" $ ccv "127" # ccn "7" # s "midi"),
+    --(0, 1, ccv "0" # ccn 10 # s "midi"), -- to change visual - get white so
+    (1, 2, ccv "2" # ccn 10 # s "midi"), -- to change visual - get the mult in
+    (1, 22, s "[soskick, supervibe]" >| note "<d e f> c c c " #gain 1 # room 0.2),
+    (1, 8, ccv (segment 64 (range 0 63 saw)) # ccn 0 # s "midi" ),
+    (1, 18, fast 2 $ s "pluck*2 ~" #speed 5 # room 0.3),
+    (1, 18, struct "t*2" $ ccv ((segment 128 (range 127 0 saw))) # ccn "7" # s "midi"),
+    (1, 10, s "super808*2 super808" #n "c" #gain 2 # room 0.2),
+    (1, 10, struct "t*2 t" $ ccv ((segment 128 (range 127 0 saw))) # ccn "2" # s "midi"),
+    (1, 14, s "clubkick*8" # speed 2 # gain 1),
+    (1, 14, struct "t*16" $ ccv ((segment 128 (range 127 0 saw))) # ccn "3" # s "midi"),
+    --(2, 21, slow 1 $ s "hehe:1" # gain 1.3 # room 0.5),
+    (1, 14, ccv "[32 0] [32 0] 0 0" # ccn "4" # s "midi"), -- for the invert / blend
+    (1, 16, s "supervibe" #note "<c d e>" # room 0.5),
+    --(1, 8, s "~ em2*2" # legato 2)
+    (8, 18, struct "t [t t] t*2 t" $ ccv ((segment 128 (range 127 0 saw))) # ccn "5" # s "midi"),
+    (8, 14, s "cp " # gain 1),
+    (8, 18, ccv "127*64" # ccn "0" # s "midi"),
+    (18, 19, ccv "0*128" # ccn "5" # s "midi"),
+    (8, 9, ccv "1" # ccn 10 # s "midi"),
+    (8, 9, ccv "127" # ccn 8 # s "midi")
+  ]
+}
+
+make_it_drOOOOP = do {
+	hush;
+    once $ ccv "0*128" # ccn 5 # s "midi";
+    once $ ccv "127*128" # ccn 1 # s "midi"
+}
+
+
+-- TRANSITION ---------------------------------------
+
+make_it_a_line = do {
+	d5 $ s "clubkick*2";
+    d8 $ struct "t*2" $ ccv (segment 128 (range 120 64 rand)) # ccn "8" # s "midi"
+}
+
+-------- here is where it starts shrinking
+no_bro_rectangle = do {
+  d1 $ s "cp ~ cp ~";
+  d5 $ s "clubkick*4";
+  d8 $ struct "t*4" $ ccv (segment 128 (range 64 15 rand)) # ccn "8" # s "midi"
+  --d5 $ stack [s "clubkick*4", struct "t*4" $ ccv ((segment 128 (range 64 12 rand))) # ccn "8" # s "midi"] 
+}
+
+lol = do {
+	d2 $ s "<tink(3,8) tink(5,8)>" # room 1.5 # gain 1;
+    d8 $ ccv ((segment 128 (range 15 6.4 saw))) # ccn "8" # s "midi"
+}
+
+guys_be_serious = do {
+	--resetMidi
+	d4 $ stack [s "blip(3,8) ~ ~ blip" # room 0.5, struct "t(3,8) ~ ~ t" $ ccv (segment 128 (range 0 127 saw)) # ccn 9 # s "midi"]
+    --once $ ccv "4" # ccn 10 # s "midi"
+}
+
+dania_where_r_u = do {
+	d3 $ stack [s "casio <casio ~> casio <casio ~>" # room 0.5, struct "t <t ~> t <t ~>" $ ccv (segment 128 (range 0 127 saw)) # ccn "11" # s "midi"];
+    --ccv (segment 64 (range 0 63 saw)) # ccn 1 # s "midi"
+    --resetMidi
+    once $ ccv "0*128" # ccn 6 # s "midi";
+    once $ ccv "0*128" # ccn 0 # s "midi"
+    --once $ ccv "4" # ccn 10 # s "midi"
+}
+
+i_cant_type = do {
+  d6 $ stack [s "drumtraks" # room 0.5]
+  --d7 $ jux rev $  stack [s "super808:6(3,8)" # note "<a b4 f>" # gain 1, struct "t(3,8)" $ ccv ((segment 128 (range 127 0 saw))) # ccn "2" # s "midi" ]
+}
+
+d7 silence
+
+---- SECOND BUILD UP AND DROP
+
+hush 
+resetMidi
+hush
+d4 $ ccv "127*128" # ccn "1" # s "midi" 
+
+oops_i_forgot = do {
+	d1 $ bite 4 "1 0 1 <2 3>" $ stack [s "sine*4" # note ((scale "pelog" "0 .. 7")+4) # room 0.4 #cut 1, struct "t*4" $ ccv (segment 127 (range 127 0 isaw)) # ccn "12" # s "midi"];
+    d2 silence;
+    once $ ccv "127" # ccn 13 # s "midi"
+}
+
+--d2 $ stack[scramble 8 $ s "tink" >| note ((scale "major" "<[2 2 3 4] [4 3 2 1] [0 0 1 2] [[2@3 1] 1]>")) # room 0.4, struct "<[t t t t] [t t t t] [t t t t] [[t@3 t] t]>" $ ccv (segment 128 (range 127 0 isaw)) # ccn "9" # s "midi"  ]
+
+its_a_feature_not_a_bug = do {
+	d5 silence;
+	--d3 silence
+	d4 $ stack [ s "clubkick ~ ~ clubkick" # gain 1.2, struct "t ~ ~ t" $ ccv (segment 128 (range 127 0 saw)) # ccn "13" # s "midi"]
+}
+
+hush
+
+i_moss_u_too = do {
+	d7 $ jux rev $  stack [s "super808:6(3,8)" # note "<a b4 f>" # gain 1, struct "t(3,8)" $ ccv ((segment 128 (range 127 0 saw))) # ccn "14" # s "midi" ];
+    d3 silence;
+    once $ ccv "0*128" # ccn 11 # s "midi"
+}
+
+soooo = do {
+	once $ stack [s "hehe:4" # gain 1.5, ccv "127*128" # ccn "6" # s "midi"]; -- so
+	d6 silence;
+    --d3 silence
+    d2 $ bite 4 "1 0 1 <2 3>" $ stack [s "sine*8" # note ((scale "pelog" "0 .. 7")+4) # room 0.4 #cut 2, struct "t*8" $ ccv (segment 128 (range 127 0 saw)) # ccn "12" # s "midi"];
+    d1 $ fast 2 $ scramble 8 $ s "tink" >| note ((scale "major" "<[2 2 3 4] [4 3 2 1] [0 0 1 2] [[2@3 1] 1]>")) # room 0.4
+}
+
+hush
+
+----- SOOOOO Mashup 1
+see_saw = do {
+  d14 $ ccv "127*128" # ccn "6" # s "midi";
+  d6 $ stack[ slice 8 "[0 5 1 2 0 3 2 4]" $ sound "hehe:4" # room 0.25 # krush 2 # gain 1.5 # pan sine, struct "[t t t t t t t t]" $ ccv ((segment 128 (range 120 0 isaw))) #ccn 14 # s "midi"];
+  d5 $ stack [slice 8 "[<0*8 0*2> 3*4 2 4] [4 .. 7]" $ sound "hehe:4" # room 0.25 # squiz 0.5 # gain 1.3 # pan sine, struct "[<t*8 t*2> t*4 t t][t*5]" $ ccv ((segment 128 (range 120 0 isaw))) #ccn 15 # s "midi"];
+  d3 $ slow 2 $ stack[ s "hehe:4*2" # gain 1.5 # room 0.3 # krush 2 # pan sine, struct "t*2" $ ccv "0 127" #ccn 4 # s "midi" ];
+}
+
+u_reap_what_u_so = do {
+	--d14 $ ccv "0*128" # ccn "6" # s "midi" 
+	d7 silence;
+    d2 $ fast 2 $  bite 4 "1 0 1 <2 3>" $ stack [s "sine*8" # note ((scale "pelog" "0 .. 7")+4) # room 0.4 #cut 2, struct "t*8" $ ccv ((segment 128 (range 120 0 isaw))) # ccn "12" # s "midi"];
+    d4 $ stack [s "clubkick(3,8) clubkick(5,8)" # gain 1, struct "t(3,8) t(5,8)" $ ccv ((segment 128 (range 120 10 isaw))) # ccn "13" # s "midi"];
+-- d4 $ stack [ s "clubkick(3,8)" # gain 1, struct "t(3,8)" $ ccv ((segment 128 (range 127 0 saw))) # ccn "1" # s "midi"]
+}
+
+----- SOOOOO Mashup 2    
+perhaps = do {
+  d6 $ fast 1 $ stack [slice 8 "[0 5? 1 2 0 3 2 4]" $ sound "hehe:4" # room 0.25 # krush 2 # gain 1.5 # pan sine, struct "[t t? t t t t t t]" $ ccv ((segment 128 (range 120 0 isaw))) #ccn 14 # s "midi" ];
+  d5 $ fast 1 $stack [slice 8 "[<0*8 0*2> 3*4 2 4] [4 .. 7]" $ sound "hehe:4" # room 0.25 # squiz 0.5 # gain 1.5 # pan sine, struct "[<t*8 t*2> t*4 t t][t*5]" $ ccv ((segment 128 (range 120 0 isaw))) #ccn 15 # s "midi"];
+  d3 $ s "hehe:4*2" # gain 1.5 # room 0.3 # krush 2 # cut 3 # pan sine
+}
+
+how_did_he_get_here = do {
+  d5 $ qtrigger 5 $ seqP [
+  	(0, 4, ccv "0*128" # ccn "17" # s "midi"),
+  	(0, 2, slice 8 "[0 5 1 2 0 3 2 4]" $ sound "hehe:4" # room 0.25 # krush 2),
+    (0, 2, ccv "1" # ccn "6" # s "midi"),
+    (2, 3, ccv "0" # ccn "6" # s "midi"),
+    (0, 2, slice 8 "[<0*8 0*2> 3*4 2 4] [4 .. 7]" $ sound "hehe:4" # room 0.25 # squiz 0.5),
+    (0, 2, s "hehe:4" # gain 1.3 # room 0.2 # krush 2),
+    (0, 1, s "hh*4"),(0, 1, ccv "0 1 0 1" # ccn "3" # s "midi"),
+    (0, 1, ccv "0 1 0 1" # ccn "3" # s "midi"),
+    (1, 2, s "hh*8"),
+    (1, 2, ccv "0 1 0 1 0 1 0 1" # ccn "3" # s "midi"),
+    (2, 4, s "hh*16"),
+    (2, 4, ccv "0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1" # ccn "3" # s "midi"),
+    (4, 5, s "~ ~ clubkick clubkick"),
+    (4, 5, s "hehe:3" # gain 1.3 # room 0.3 #speed 0.9),
+    (4, 6, ccv "127*128" # ccn "17" # s "midi"),
+    (5, 18, s "reverbkick*4" # room 0.3),
+    (5, 18, struct "t*4" $ ccv (segment 128 (range 127 0 isaw)) # ccn 20 # s "midi"),
+    (5, 6, bite 4 "1 0 1 <2 3>" $ s "sine*4" # note ((scale "pelog" "0 .. 7")+4)),
+    (5, 6, struct "t*4" $ ccv (segment 128 (range 127 0 isaw)) # ccn 21 # s "midi"),
+    --(5,6, )
+    (6, 18, bite 4 "1 0 1 <2 3>" $ s "sine*8" # note ((scale "pelog" "0 .. 7")+4)),
+    (6, 18, struct "t*8" $ ccv (segment 128 (range 127 0 isaw)) # ccn 21 # s "midi"),
+    (5, 18, s "bass3" <| n (run 8) # room 0.5 # gain 1.5 # krush 2),
+    (6, 7, struct "t*4 ~" $ ccv (segment 128 (range 127 0 isaw)) # ccn 22 # s "midi"),
+    (7, 18, struct "~ t*4" $ ccv (segment 128 (range 127 0 isaw)) # ccn 22 # s "midi")
+  ] # gain 2;
+  d14 silence;
+  --d3 silence;
+  --d6 silence
+ }
+
+bruh = do { -- silences the sooos
+	d3 silence;
+    d6 silence
+}
+
+give_us_an_A_pls = do {
+  d1 silence;
+  d2 silence;
+  d3 silence;
+  d6 silence;
+  d10 $ struct "t*8" $ ccv ((segment 128 (range 127 0 isaw))) # ccn "0" # s "midi"
+}
+
+--d1 $ s "battles" # note "a4" # gain 1.1 # room 0.2
+
+which_party = do {
+  all degrade;
+  d6 $ stack [s "battles" # room 0.5, ccv (segment 127 (range 127 0 isaw)) # ccn "23" # s "midi"];
+  once $ ccv "0*128" # ccn 2 # s "midi";
+  once $ ccv "0*128" # ccn 17 # s "midi";
+}
+
+the_one_u_r_not_invited_to = do {
+  hush;
+  all id;
+  --d5 $ s "super808 808bd:1*2 808bd:1 super808@1" # room 0.3 # gain 0.9 # sustain 4;
+  d4 $ qtrigger 4 $ seqP [
+  	--(0, 2, s "super808 808bd:1*2 808bd:1 super808@1" # room 0.3 # gain 0.9 # sustain 4),
+    (0, 3, s "battles" # room 0.5 # gain 1.1),
+    (0, 4, ccv (segment 127 (range 127 0 isaw)) # ccn "23" # s "midi"),
+    --(3, 4, ccv "0" # ccn "23" # s "midi"),
+    (3, 4, s "hehe:5" # gain 2.5 # room 1) -- OK
+    --(0, 3, ccv "0" # ccn 24 # s "midi"),
+    --(3, 4, ccv "127" # ccn 24 # s "midi")
+  ];
+ }
+
+
+hush
+
+
+
+
+
+----ENDDDD
+
+
