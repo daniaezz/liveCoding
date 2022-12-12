@@ -364,7 +364,7 @@ render(o0);
 yeah_soooo =()=>{
   //hush();
   render(o0);
-  src(s0).out();
+  src(s0).mult(osc(10, 0.8, 1).color(3.5, 3.0, 3.0)).out();
 }
 partYYYY_TIME = ()=>{
 	p5.remove()
