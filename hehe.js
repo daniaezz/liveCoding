@@ -188,11 +188,6 @@ p5.draw = ()=>{
   } else {
   	xpos = width
   }
-  if (cc[24]){
-    //cc[17] = 0
-    //xpos-=25
-  	p5.text("okay", width/2, 1.5*height/2 )
-  } 
 };
 //src(s0).out()
   shape(2, 0.001, ()=>cc[14]*0.05+0.05).modulateScrollY(noise(()=> cc[12]*4,0.2).scale(()=>cc[13]+0.01*0.8,1,5))
