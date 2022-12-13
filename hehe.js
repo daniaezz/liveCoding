@@ -69,12 +69,12 @@ p5.draw = ()=>{
     //p5.strokeWeight(0);
     //p5.textSize(200);
     p5.textSize(200);
-    textie = "SOOOOOOOO";
+    textie = "SOOOOOO";
     p5.strokeWeight(15);
     //p5.text("SOOOOOOOOO",width/2,height/2);
     for (i=0; i<textie.length && p5.frameCount%10; i++) {
         textieSub = textie.substring(0,i+1);
-    	p5.text(textieSub,width/4,1.5*height/2);
+    	p5.text(textieSub,width/8,height/2.2);
     } 
       	ripples = [];
         //cc[6] =             cc[0] = 0;
@@ -172,11 +172,11 @@ p5.draw = ()=>{
   if (cc[6]) {
     p5.fill(255,255,255);
     p5.textSize(200);
-    textie = "SOOOOOOOO"
+    textie = "SOOOOOO"
     //p5.text("SOOOOOOOOO",width/2,height/2);
     for (i=0; i<textie.length && p5.frameCount%10; i++) {
         textieSub = textie.substring(0,i+1);
-    	p5.text(textieSub,width/4,1.5*height/2);
+    	p5.text(textieSub,width/8,height/2.2);
     } 
     if (p5.frameCount%5 == 0){
       cc[6] = 0
@@ -251,6 +251,7 @@ yeah_soooo =()=>{
   src(s0).mult(osc(10, 0.8, 1).color(3.5, 3.0, 3.0)).out();
 }
 partYYYY_TIME = ()=>{
+	hush()
 	p5.remove()
 // MODIFIED DRPP
 voronoi(5+2,1,2).mult(osc(3, 0.8, 1)).color(3.5, 3.0, 3)
