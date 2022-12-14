@@ -184,7 +184,7 @@ p5.draw = ()=>{
   } 
   if (cc[17]){
     xpos-=25
-  	p5.text(textie, xpos, 1.5*height/2 )
+  	p5.text(textie, xpos, 1.5*height/2.2 )
   } else {
   	xpos = width
   }
